@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">992896009538-hsvv978t15uufkp9dskmdv6nhbttrhse.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://quickroom-e7dfd.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">992896009538</string>
+    <string name="google_api_key" translatable="false">AIzaSyA3fUo9iMUnWQn2Vcw_aN25LWbJq4UgDq0</string>
+    <string name="google_app_id" translatable="false">1:992896009538:android:3e569bb805f8b296</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA3fUo9iMUnWQn2Vcw_aN25LWbJq4UgDq0</string>
+    <string name="google_storage_bucket" translatable="false">quickroom-e7dfd.appspot.com</string>
+    <string name="project_id" translatable="false">quickroom-e7dfd</string>
+</resources>

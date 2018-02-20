@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "992896009538",
+    "firebase_url": "https://quickroom-e7dfd.firebaseio.com",
+    "project_id": "quickroom-e7dfd",
+    "storage_bucket": "quickroom-e7dfd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992896009538:android:3e569bb805f8b296",
+        "android_client_info": {
+          "package_name": "com.androidroomfirebase.app.quickroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992896009538-pgsb0lkqrgnnsude56lk2kvet2b1rr5j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.androidroomfirebase.app.quickroom",
+            "certificate_hash": "3e51ffc6d04028039a76c28b1d89b5aeebbffaec"
+          }
+        },
+        {
+          "client_id": "992896009538-hsvv978t15uufkp9dskmdv6nhbttrhse.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3fUo9iMUnWQn2Vcw_aN25LWbJq4UgDq0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992896009538-hsvv978t15uufkp9dskmdv6nhbttrhse.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
