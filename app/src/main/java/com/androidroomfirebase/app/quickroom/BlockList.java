@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,11 +32,13 @@ public class BlockList extends AppCompatActivity {
         dref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                String block;
-                for (DataSnapshot dsp : dataSnapshot.getChildren()) {
-                    list.add(dsp.getKey());
-                    adapter.notifyDataSetChanged();
-                }
+                String room = dataSnapshot.getKey();
+                    for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+                        if(dsp.getRef().getParent().getKey().equals("Room Type")) {
+                            list.add(dsp.getKey());
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
             }
 
             @Override

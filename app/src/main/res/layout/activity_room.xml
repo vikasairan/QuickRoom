@@ -11,21 +11,70 @@
     tools:context="com.androidroomfirebase.app.quickroom.Room">
 
     <Button
-        android:text="date picker"
+        android:id="@+id/datepicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="182dp"
-        android:id="@+id/button10" />
+        android:text="Select date" />
 
     <TextView
-        android:text="date"
+        android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/datepicker"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:id="@+id/textView3"
-        android:textSize="40dp"/>
+        android:layout_marginTop="15dp"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/intime"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="47dp"
+        android:text="INTIME"
+        android:textSize="16dp" />
+
+    <TimePicker
+        android:id="@+id/intime"
+        android:layout_width="260dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/date"
+        android:timePickerMode="spinner" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/outtime"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="37dp"
+        android:text="OUTTIME"
+        android:textSize="16dp" />
+
+    <TimePicker
+        android:id="@+id/outtime"
+        android:layout_width="260dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="16dp"
+        android:timePickerMode="spinner" />
+
+    <Button
+        android:id="@+id/book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:text="Book Room" />
+
 </RelativeLayout>

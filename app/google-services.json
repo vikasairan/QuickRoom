@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "992896009538",
-    "firebase_url": "https://quickroom-e7dfd.firebaseio.com",
-    "project_id": "quickroom-e7dfd",
-    "storage_bucket": "quickroom-e7dfd.appspot.com"
+    "project_number": "512571757876",
+    "firebase_url": "https://quickroom-581e2.firebaseio.com",
+    "project_id": "quickroom-581e2",
+    "storage_bucket": "quickroom-581e2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:992896009538:android:3e569bb805f8b296",
+        "mobilesdk_app_id": "1:512571757876:android:3e569bb805f8b296",
         "android_client_info": {
           "package_name": "com.androidroomfirebase.app.quickroom"
         }
       },
       "oauth_client": [
         {
-          "client_id": "992896009538-pgsb0lkqrgnnsude56lk2kvet2b1rr5j.apps.googleusercontent.com",
+          "client_id": "512571757876-4mrr11c407q2tu70aivq8vi8cpe2ndmq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.androidroomfirebase.app.quickroom",
@@ -23,13 +23,21 @@
           }
         },
         {
-          "client_id": "992896009538-hsvv978t15uufkp9dskmdv6nhbttrhse.apps.googleusercontent.com",
+          "client_id": "512571757876-add68u30s49ns5jfp0v6r59i4565cb4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.androidroomfirebase.app.quickroom",
+            "certificate_hash": "a4e97cc29755f0c805beb3491b4d83d81fa22de4"
+          }
+        },
+        {
+          "client_id": "512571757876-2lcklj0s8mpbt35ig05aacm14gngbdb3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA3fUo9iMUnWQn2Vcw_aN25LWbJq4UgDq0"
+          "current_key": "AIzaSyDhRW6UY1AihfBAhRtAe3hm7MpnIwygUAs"
         }
       ],
       "services": {
@@ -40,7 +48,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "992896009538-hsvv978t15uufkp9dskmdv6nhbttrhse.apps.googleusercontent.com",
+              "client_id": "512571757876-2lcklj0s8mpbt35ig05aacm14gngbdb3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
