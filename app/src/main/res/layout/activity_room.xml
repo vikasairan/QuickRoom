@@ -45,7 +45,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/date"
-        android:timePickerMode="spinner" />
+        android:timePickerMode="spinner"
+        />
 
     <TextView
         android:id="@+id/textView"

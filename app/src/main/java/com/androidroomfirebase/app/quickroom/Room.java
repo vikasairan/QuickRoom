@@ -1,5 +1,6 @@
 package com.androidroomfirebase.app.quickroom;
 
+import android.app.TimePickerDialog;
 import android.app.DatePickerDialog;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -9,22 +10,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Field;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class Room extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     int finishval=0;
+    TimePicker timePicker;
+    private int TIME_PICKER_INTERVAL = 30;
+    NumberPicker minutePicker;
+    List<String> displayedValues;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,8 @@ public class Room extends AppCompatActivity implements DatePickerDialog.OnDateSe
         intime.setMinute(0);
         outtime.setCurrentHour(12);
         outtime.setMinute(0);
+        setTimePickerInterval(intime);
+        setTimePickerInterval(outtime);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,12 +87,13 @@ public class Room extends AppCompatActivity implements DatePickerDialog.OnDateSe
                                 TimePicker outtime=(TimePicker)findViewById(R.id.outtime);
                                 int inhour =intime.getHour();
                                 int outhour =outtime.getHour();
-
-                                if(inhour<outhour) {
+                                int inminute=intime.getMinute();
+                                int outminute=outtime.getMinute();
+                                if((float)inhour+(float)(inminute/60)<(float)outhour+(float)(outminute/60)) {
                                     int flag = 0;
                                     if (finishval == 0) {
-                                        for (int i = 0; i < outhour - inhour; i++) {
-                                            if (t[0].contains(String.valueOf(inhour + i))) {
+                                        for (float i = 0; i < ((float)outhour+(float)(outminute/60)) - ((float)inhour+(float)(inminute/60)); i= (float) (i+0.5)) {
+                                            if (t[0].contains(String.valueOf((float)inhour+(float)(inminute/60) + i))) {
                                                 flag = 1;
                                                 Toast.makeText(Room.this, "Room Not Available At Selected time! Please Choose other time", Toast.LENGTH_SHORT).show();
                                                 break;
@@ -90,8 +101,8 @@ public class Room extends AppCompatActivity implements DatePickerDialog.OnDateSe
                                         }
 
                                         if (flag == 0) {
-                                            for (int i = 0; i < outhour - inhour; i++) {
-                                                t[0] = t[0].concat(String.valueOf(inhour + i));
+                                            for (float i = 0; i < ((float)outhour+(float)(outminute/60)) - ((float)inhour+(float)(inminute/60)); i= (float) (i+0.5)) {
+                                                t[0] = t[0].concat(String.valueOf((float)inhour+(float)(inminute/60) + i));
                                                 t[0] = t[0].concat(" ");
                                             }
                                             myRef.child(currentDateString).setValue(t[0]);
@@ -124,5 +135,22 @@ public class Room extends AppCompatActivity implements DatePickerDialog.OnDateSe
         TextView txt=(TextView)findViewById(R.id.date);
         txt.setText(currentDateString);
 
+    }
+    private void setTimePickerInterval(TimePicker timePicker) {
+        try {
+            Class<?> classForid = Class.forName("com.android.internal.R$id");
+            Field field = classForid.getField("minute");
+            minutePicker = (NumberPicker) timePicker.findViewById(field.getInt(null));
+            minutePicker.setMinValue(0);
+            minutePicker.setMaxValue((60/TIME_PICKER_INTERVAL)-1);
+            displayedValues = new ArrayList<String>();
+            for (int i = 0; i < 60; i += TIME_PICKER_INTERVAL) {
+                displayedValues.add(String.format("%02d", i));
+            }
+            minutePicker.setDisplayedValues(displayedValues.toArray(new String[0]));
+            minutePicker.setWrapSelectorWheel(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

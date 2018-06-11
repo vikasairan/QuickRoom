@@ -32,9 +32,8 @@ public class BlockList extends AppCompatActivity {
         dref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                String room = dataSnapshot.getKey();
                     for (DataSnapshot dsp : dataSnapshot.getChildren()) {
-                        if(dsp.getRef().getParent().getKey().equals("Room Type")) {
+                        if(dsp.getRef().getParent().getKey().equalsIgnoreCase("Room Type")) {
                             list.add(dsp.getKey());
                             adapter.notifyDataSetChanged();
                         }
