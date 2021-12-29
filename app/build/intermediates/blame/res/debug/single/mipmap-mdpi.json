@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\AndroidStudioProjects\\QuickRoom\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "E:\\AndroidStudioProjects\\QuickRoom\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProjects\\QuickRoom\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\firebase.png",
+        "source": "E:\\AndroidStudioProjects\\QuickRoom\\app\\src\\main\\res\\mipmap-mdpi\\firebase.png"
+    }
+]

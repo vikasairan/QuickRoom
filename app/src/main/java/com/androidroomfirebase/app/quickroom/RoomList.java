@@ -1,18 +1,19 @@
 package com.androidroomfirebase.app.quickroom;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 public class RoomList extends AppCompatActivity {
     DatabaseReference dref;
@@ -66,16 +67,23 @@ public class RoomList extends AppCompatActivity {
                final String room = (String) listview.getItemAtPosition(i);
                 Bundle extras = getIntent().getExtras();
                 String type = null;
+                String name = null;
+                String email = null;
+                String contact = null;
                 if (extras != null) {
+                    name = extras.getString("name");
+                    email = extras.getString("email");
+                    contact = extras.getString("contact");
                     type = extras.getString("type");
                 }
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("type", type);
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("room", room);
-
+                Bundle bundle = new Bundle();
+                bundle.putString("type", type);
+                bundle.putString("room", room);
+                bundle.putString("name", name);
+                bundle.putString("email", email);
+                bundle.putString("contact",contact);
                 Intent intent = new Intent(RoomList.this, Room.class);
-                                intent.putExtras(bundle1).putExtras(bundle2);
+                                intent.putExtras(bundle);
                                 startActivity(intent);
 
             }

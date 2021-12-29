@@ -3,11 +3,11 @@
     package="com.androidroomfirebase.app.quickroom">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="QuickRoom"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity">
@@ -17,13 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".SignupActivity" />
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".SelectRoomType" />
         <activity android:name=".Eblock" />
         <activity android:name=".Room" />
         <activity android:name=".BlockList" />
         <activity android:name=".RoomList"/>
+        <activity android:name=".UploadImage"/>
+
         </application>
 
 </manifest>

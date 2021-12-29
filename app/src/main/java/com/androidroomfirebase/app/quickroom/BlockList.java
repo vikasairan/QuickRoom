@@ -1,20 +1,19 @@
 package com.androidroomfirebase.app.quickroom;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 public class BlockList extends AppCompatActivity {
     DatabaseReference dref;
@@ -62,8 +61,20 @@ public class BlockList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                final String type = (String) listview.getItemAtPosition(i);
-                Bundle bundle = new Bundle();
+                Bundle extras = getIntent().getExtras();
+                String name = null;
+                String email = null;
+                String contact = null;
+                if (extras != null) {
+                    name = extras.getString("name");
+                    email = extras.getString("email");
+                    contact = extras.getString("contact");
+                }
+                Bundle bundle=new Bundle();
                 bundle.putString("type", type);
+                bundle.putString("name", name);
+                bundle.putString("email", email);
+                bundle.putString("contact",contact);
                 Intent intent = new Intent(BlockList.this, RoomList.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
